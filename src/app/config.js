@@ -17,9 +17,6 @@ export default function routing($urlRouterProvider, $locationProvider,$stateProv
             // we'll get to this in a bit   
             url: '/getInfo',
             template: require('./partial-user-details-form.html'),
-            resolve: {
-                name: "hello"
-            },
             controller: function($scope){
                      var apper = this; 
                     // apper.user = {};

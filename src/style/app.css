@@ -1,7 +1,4 @@
-body {
-  background: #fff;
-  color: #000;
-}
+
 
 a {
   color: #03A9F4;
@@ -27,15 +24,18 @@ footer {
 
 .uib-title {
   cursor: default;  
+  color: #000;
 }
 
 .uib-title:hover {
   background: transparent;
+  color: #fff;
 }
 
 .uib-title , .uib-left , .uib-right{
   background: transparent;
   border: 0px;
+  color: #fff;
 }
 
 .uib-title:active , .uib-left:active , .uib-right:active{
@@ -48,21 +48,25 @@ footer {
   background: #fff;
   opacity:.5;
   border: 0px;
+  color: #fff;
 }
 
 .uib-title:focus , .uib-left:focus , .uib-right:focus{
   background: transparent;
   border: 0px;
-  
+  color: #fff;
 }
 
 .calendar-button{
   background: transparent;
+  color: #fff;
 }
 
 .calendar-button:hover{
-  background: #777;
+  background: #ddd;
   border-radius: 0px;
+  color: #000;
+  opacity: .7;
 }
 
 .datepicker-background{
@@ -85,15 +89,22 @@ footer {
 
 .day-header{
   padding:10px;
+  color: #fff;
 }
 
 .button-next{
   background-color: transparent;
   border: 1px solid #fff;
   border-radius: 0px;
+  color:#fff;
 }
 
 .button-next:hover{
+  background-color: #fff;
+  opacity:.5;
+}
+
+.btn-info:active{
   background-color: #fff;
   opacity:.5;
 }

@@ -36,7 +36,7 @@ angular.module("uib/template/datepicker/day.html", []).run(["$templateCache", fu
     "<div class=\"datepicker-background\">\n" +
     "  <svg  xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"320px\" height=\"550px\" viewBox=\"0 0 320 550\" preserveAspectRatio=\"xMidYMid meet\" >\n" +
     "    <g ng-repeat=\"row in rows track by $index\">\n" +
-    "      <path  id=\"row_{{$index}}\" class=\"lineABC\" d=\"m 10 {{60 + $index * 50}} l 20 -20 l 260 0 l 20 20 l 0 50 l -20 -20 l -260 0 l -20 20 z\" stroke=\"black\"  stroke-width=\"1.5\" fill=\"transparent\" opacity=\".1\" />  \n" +
+    "      <path  id=\"row_{{$index}}\" class=\"lineABC\" d=\"m 10 {{60 + $index * 50}} l 20 -20 l 260 0 l 20 20 l 0 50 l -20 -20 l -260 0 l -20 20 z\" stroke=\"white\"  stroke-width=\"1.5\" fill=\"transparent\" opacity=\".1\" />  \n" +
     "    </g>  \n" +
     "  </svg>\n" +
     "</div>\n" +
