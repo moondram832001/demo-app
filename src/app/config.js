@@ -29,6 +29,15 @@ export default function routing($urlRouterProvider, $locationProvider,$stateProv
                     //   }
                     // };
                     $scope.button = "hello";
+                    $scope.chronicDiseaseOptions = [
+                        "Arthritis",
+                        "Cancer",
+                        "Diabetes"
+                    ];
+
+                    $scope.onSubmit = function() {
+                        alert("sumit triggered");
+                    };
                     
             }
         })

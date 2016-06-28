@@ -20,10 +20,11 @@ class AppCtrl {
     this.url = 'http://www.google.co.in';
     this.dt = new Date();
     this.button = "hello";
+    let disabledDate  = new Date(this.dt.getDate() + 1)
     
     this.options = {
     //minDate: new Date(),
-    showWeeks: false,
+    showWeeks: false
     
   };
     
