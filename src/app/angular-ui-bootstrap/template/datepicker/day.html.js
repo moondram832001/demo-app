@@ -6,12 +6,12 @@ angular.module("uib/template/datepicker/day.html", []).run(["$templateCache", fu
     "  <thead>\n" +
     "    <tr>\n" +
     "      <th><button type=\"button\" class=\"btn btn-default btn-sm pull-left uib-left\" ng-click=\"move(-1)\" tabindex=\"-1\"><i class=\"glyphicon glyphicon-chevron-left\"></i></button></th>\n" +
-    "      <th colspan=\"{{::5 + showWeeks}}\"><button id=\"{{::uniqueId}}-title\" role=\"heading\" aria-live=\"assertive\" aria-atomic=\"true\" type=\"button\" class=\"btn btn-default btn-sm uib-title\" ng-click=\"toggleMode()\" ng-disabled=\"datepickerMode === maxMode\" tabindex=\"-1\"><strong>{{title}}</strong></button></th>\n" +
+    "      <th colspan=\"{{::5 + showWeeks}}\"><button id=\"{{::uniqueId}}-title\" role=\"heading\" aria-live=\"assertive\" aria-atomic=\"true\" type=\"button\" class=\"btn btn-default btn-sm uib-title\" ng-click=\"\" ng-disabled=\"datepickerMode === maxMode\" tabindex=\"-1\"><strong>{{title}}</strong></button></th>\n" +
     "      <th><button type=\"button\" class=\"btn btn-default btn-sm pull-right uib-right\" ng-click=\"move(1)\" tabindex=\"-1\"><i class=\"glyphicon glyphicon-chevron-right\"></i></button></th>\n" +
     "    </tr>\n" +
     "    <tr>\n" +
     "      <th ng-if=\"showWeeks\" class=\"text-center\"></th>\n" +
-    "      <th ng-repeat=\"label in ::labels track by $index\" class=\"text-center\"><small aria-label=\"{{::label.full}}\">{{::label.abbr}}</small></th>\n" +
+    "      <th ng-repeat=\"label in ::labels track by $index\" class=\"text-center day-header\" ><small aria-label=\"{{::label.full}}\">{{::label.abbr}}</small></th>\n" +
     "    </tr>\n" +
     "  </thead>\n" +
     "  <tbody>\n" +
@@ -34,9 +34,9 @@ angular.module("uib/template/datepicker/day.html", []).run(["$templateCache", fu
     "</table>\n" +
     "</div>\n" +
     "<div class=\"datepicker-background\">\n" +
-    "  <svg  xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"100%\" height=\"750px\" viewBox=\"0 0 550 750\" preserveAspectRatio=\"xMidYMid meet\" >\n" +
+    "  <svg  xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"320px\" height=\"550px\" viewBox=\"0 0 320 550\" preserveAspectRatio=\"xMidYMid meet\" >\n" +
     "    <g ng-repeat=\"row in rows track by $index\">\n" +
-    "      <path  id=\"row_{{$index}}\" class=\"lineABC\" d=\"m 50 {{60 + $index * 50}} l 50 -50 l 300 0 l 50 50 l 0 50 l -50 -50 l -300 0 l -50 50 z\" stroke=\"black\"  stroke-width=\"1.5\" fill=\"transparent\" opacity=\".3\" />  \n" +
+    "      <path  id=\"row_{{$index}}\" class=\"lineABC\" d=\"m 10 {{60 + $index * 50}} l 20 -20 l 260 0 l 20 20 l 0 50 l -20 -20 l -260 0 l -20 20 z\" stroke=\"black\"  stroke-width=\"1.5\" fill=\"transparent\" opacity=\".1\" />  \n" +
     "    </g>  \n" +
     "  </svg>\n" +
     "</div>\n" +

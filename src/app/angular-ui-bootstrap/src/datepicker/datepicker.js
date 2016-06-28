@@ -270,7 +270,7 @@ angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.dateparser', 'ui.bootst
       $scope.$emit('uib:datepicker.mode');
     }
 
-    $scope.$broadcast('uib:datepicker.focus');
+  //  $scope.$broadcast('uib:datepicker.focus');
   };
   
   $scope.hoverIn = function(index){
@@ -282,7 +282,7 @@ angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.dateparser', 'ui.bootst
   
   $scope.hoverOut = function(index){
     console.log("hover out ",index);
-    angular.element( document.querySelector( '#row_'+ index  ) ).css({ opacity: .3});
+    angular.element( document.querySelector( '#row_'+ index  ) ).css({ opacity: .1});
   }
 
   $scope.move = function(direction) {

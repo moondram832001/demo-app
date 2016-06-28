@@ -11,8 +11,10 @@
   },
   "author": "Cyril",
   "dependencies": {
-    "angular": "^1.5.0",
+    "angular": "^1.5.7",
+    "angular-formly": "^8.2.1",
     "angular-ui-router": "^0.3.1",
+    "api-check": "^7.5.5",
     "bootstrap": "^3.3.6"
   },
   "devDependencies": {

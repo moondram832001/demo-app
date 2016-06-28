@@ -2,21 +2,44 @@ routing.$inject = ['$urlRouterProvider', '$locationProvider','$stateProvider'];
 
 export default function routing($urlRouterProvider, $locationProvider,$stateProvider) {
   $locationProvider.html5Mode(true);
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/home');
   
   $stateProvider
         
         // HOME STATES AND NESTED VIEWS ========================================
-        .state('home', {
-            url: '/home',
-            template: require('./partial-home.html')
+        .state('getDate', {
+            url: '/getDate',
+            template: require('./partial-get-date.html')
         })
         
         // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
-        .state('about', {
+        .state('getInfo', {
             // we'll get to this in a bit   
-            url: '/about',
-            template: require('./partial-about.html')
-        });
+            url: '/getInfo',
+            template: require('./partial-user-details-form.html'),
+            resolve: {
+                name: "hello"
+            },
+            controller: function($scope){
+                     var apper = this; 
+                    // apper.user = {};
+                    // apper.userFields = 
+                    // {
+                    //   key: 'checked',
+                    //   type: 'checkbox',
+                    //   templateOptions: {
+                    //     label: 'Check me out'
+                    //   }
+                    // };
+                    $scope.button = "hello";
+                    
+            }
+        })
+        .state("home", 
+        {   
+            url : '/home',
+            template: require('./partial-home.html')
+        }
+        )
   
 }

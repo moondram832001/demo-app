@@ -1,4 +1,5 @@
 import angular from 'angular';
+import formly from 'angular-formly';
 import 'bootstrap/dist/css/bootstrap.css';
 
 import uirouter from 'angular-ui-router';
@@ -18,18 +19,20 @@ class AppCtrl {
   constructor() {
     this.url = 'http://www.google.co.in';
     this.dt = new Date();
+    this.button = "hello";
+    
     this.options = {
-    minDate: new Date(),
-    showWeeks: false
+    //minDate: new Date(),
+    showWeeks: false,
+    
   };
-  
-  
+    
   }
 }
 
 const MODULE_NAME = 'app';
 
-angular.module(MODULE_NAME, [uirouter,datepicker])
+angular.module(MODULE_NAME, [uirouter,datepicker,formly])
   .config(routing) 
   .directive('app', app)
   .controller('AppCtrl', AppCtrl);
