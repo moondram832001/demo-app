@@ -274,14 +274,14 @@ angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.dateparser', 'ui.bootst
   };
   
   $scope.hoverIn = function(index){
-    console.log("hover in ",index);
-    console.log(angular.element( document.querySelector( '#row_'+ index  ) ));
+ //   console.log("hover in ",index);
+ //   console.log(angular.element( document.querySelector( '#row_'+ index  ) ));
     angular.element( document.querySelector( '#row_'+ index  ) ).css({ opacity: 1});
   //  console.log(e.target.attr("data-id"));
   }
   
   $scope.hoverOut = function(index){
-    console.log("hover out ",index);
+  //  console.log("hover out ",index);
     angular.element( document.querySelector( '#row_'+ index  ) ).css({ opacity: .1});
   }
 
