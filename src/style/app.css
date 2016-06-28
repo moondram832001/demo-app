@@ -1,0 +1,57 @@
+/* styles in src/style directory are applied to the whole page */
+body {
+  background: #fff;
+  color: #000;
+}
+
+a {
+  color: #03A9F4;
+}
+
+main {
+  padding: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin-top: 50px;
+  display: block;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.8em;
+}
+
+.uib-daypicker{
+  outline: none !important;
+  border-spacing: 0px;
+}
+
+.uib-title , .uib-left , .uib-right{
+  background: transparent;
+  border: 0px;
+}
+
+.calendar-button{
+  background: transparent;
+}
+
+.calendar-button:hover{
+  background: #777;
+}
+
+.datepicker-background{
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    left: -230px;
+    top: 203px;
+}
+
+.datepicker-foreground{
+  position: absolute;
+  z-index: 10;
+}
+
+.calendar-button{
+  padding: 14px 10px;
+}
