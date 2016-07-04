@@ -19,15 +19,7 @@ export default function routing($urlRouterProvider, $locationProvider,$stateProv
             template: require('./partial-user-details-form.html'),
             controller: function($scope){
                      var apper = this; 
-                    // apper.user = {};
-                    // apper.userFields = 
-                    // {
-                    //   key: 'checked',
-                    //   type: 'checkbox',
-                    //   templateOptions: {
-                    //     label: 'Check me out'
-                    //   }
-                    // };
+                   
                     $scope.button = "hello";
                     $scope.chronicDiseaseOptions = [
                         "Arthritis",

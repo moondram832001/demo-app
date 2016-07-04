@@ -46,9 +46,9 @@ footer {
 
  .uib-left:hover , .uib-right:hover{
   background: #fff;
-  opacity:.5;
+  opacity:.3;
   border: 0px;
-  color: #fff;
+  color: #000;
 }
 
 .uib-title:focus , .uib-left:focus , .uib-right:focus{

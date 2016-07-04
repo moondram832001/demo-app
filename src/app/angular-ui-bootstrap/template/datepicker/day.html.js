@@ -25,7 +25,7 @@ angular.module("uib/template/datepicker/day.html", []).run(["$templateCache", fu
     "            'btn-info' for selectedDt,\n" +
     "            'active' for activeDt\n" +
     "            on dt\"\n" +
-    "          ng-click=\"select(dt.date)\"\n" +
+    "          ng-click=\"select(dt.date,$parent.$index)\"\n" +
     "          ng-disabled=\"::dt.disabled\"\n" +
     "          tabindex=\"-1\"><span ng-class=\"::{'text-muted': dt.secondary, 'text-info': dt.current}\">{{::dt.label}}</span></button>\n" +
     "      </td>\n" +

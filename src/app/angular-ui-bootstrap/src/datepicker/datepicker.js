@@ -137,6 +137,7 @@ angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.dateparser', 'ui.bootst
   });
 
   $scope.uniqueId = 'datepicker-' + $scope.$id + '-' + Math.floor(Math.random() * 10000);
+  $scope.lastClicked = 0;
 
   $scope.disabled = angular.isDefined($attrs.disabled) || false;
   if (angular.isDefined($attrs.ngDisabled)) {
@@ -256,7 +257,7 @@ angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.dateparser', 'ui.bootst
     return arrays;
   };
 
-  $scope.select = function(date) {
+  $scope.select = function(date,index) {
     if ($scope.datepickerMode === self.minMode) {
       var dt = ngModelCtrl.$viewValue ? dateParser.fromTimezone(new Date(ngModelCtrl.$viewValue), ngModelOptions.timezone) : new Date(0, 0, 0, 0, 0, 0, 0);
       dt.setFullYear(date.getFullYear(), date.getMonth(), date.getDate());
@@ -271,6 +272,10 @@ angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.dateparser', 'ui.bootst
     }
 
   //  $scope.$broadcast('uib:datepicker.focus');
+   
+     angular.element( document.querySelector( '#row_'+ $scope.lastClicked  ) ).css({ opacity: .1});
+     angular.element( document.querySelector( '#row_'+ index  ) ).css({ opacity: 1});
+     $scope.lastClicked = index;
   };
   
   $scope.hoverIn = function(index){

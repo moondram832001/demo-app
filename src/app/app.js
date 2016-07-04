@@ -16,20 +16,30 @@ let app = () => {
 };
 
 class AppCtrl {
-  constructor() {
+  constructor($http) {
     this.url = 'http://www.google.co.in';
     this.dt = new Date();
     this.button = "hello";
+    this.$http = $http;
+    
     let disabledDate  = new Date(this.dt.getDate() + 1)
     
     this.options = {
     //minDate: new Date(),
-    showWeeks: false
+    showWeeks: false,
+    dateDisabled: function disabled(data) {
+    var date = data.date,
+      mode = data.mode;
+      
+    return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
+   }
     
   };
     
   }
 }
+
+AppCtrl.$inject = ['$http'];
 
 const MODULE_NAME = 'app';
 
