@@ -8,16 +8,66 @@
   <base href="/">
 </head>
 <style>
+
 body {
- background-image: url("http://res.cloudinary.com/moondram832001/image/upload/v1467624322/bg_1_eihtkw.png");
+ background-image: url("https://res.cloudinary.com/moondram832001/image/upload/v1467624322/bg_1_eihtkw.png");
+ overflow: hidden;
 }
+
+#clouds_pos {
+ position: relative;
+ z-index: -10;
+}
+
+
 </style>
 <script>
+ var counter = 1;
+  var refreshIntervalId =  setInterval(function(){
+    
+    var randPos = getRandomInt(-400,2000);
+    var randScale = getRandomArbitrary(.2,2);
+    var randRotate = getRandomInt(0,360);
+  
+    counter++;
+    if(counter > 30) {
+      clearInterval(refreshIntervalId);
+    }
+    
+    var cloud = new Image();
+  cloud.src = 'https://res.cloudinary.com/moondram832001/image/upload/v1467121783/cloud10_wolgag.png';
+  cloud.onload = function(img){
+ 
+    var foo = document.getElementById("clouds");
+    foo.appendChild(cloud);
+     cloud.style.display = "block";
+     cloud.style.transform = "scaleX("+ randScale + ") scaleY("+ randScale +") rotateZ("+ randRotate+ "deg)"
+     cloud.style.opacity = .5;
+     cloud.style.position = "absolute";
+     cloud.style.top = "80%";
+     cloud.style.left = randPos + "px";
+ };
+ 
+  
+  }, 20); 
+
+  function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+  }
+  
+  function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+  }
+
 </script>
 <body>
   
  
- <app></app>
-  
+<app></app>
+
+<div id="clouds_pos">
+	<div id="clouds"></div>  
+</div>
+
 </body>
 </html>

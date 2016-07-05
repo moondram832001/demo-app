@@ -6,18 +6,96 @@
   <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <base href="/">
-<link href="/app.409236827d7a12b2de81.css" rel="stylesheet"></head>
+<link href="/app.8bbacd5479550f4be487.css" rel="stylesheet"></head>
 <style>
 body {
- background-image: url("http://res.cloudinary.com/moondram832001/image/upload/v1467624322/bg_1_eihtkw.png");
+ background-image: url("https://res.cloudinary.com/moondram832001/image/upload/v1467624322/bg_1_eihtkw.png");
+ overflow: hidden;
 }
+
+#clouds_pos {
+ position: relative;
+ 
+ z-index: -10;
+}
+
+
+
+
+@keyframes flyby {
+  from {
+    transform: translateX(0px) 
+  }
+
+  to {
+    transform: translateX(-300px);
+  }
+}
+
+#clouds {
+  animation-duration: 30s;
+  animation-name: flyby;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  z-index: -10;
+  transform: translateZ(0);
+  position: relative;
+  height: calc(100vh - 600px);
+}
+
 </style>
 <script>
+ var counter = 1;
+  var refreshIntervalId =  setInterval(function(){
+    
+    var randPos = getRandomInt(-400,2000);
+    var randScale = getRandomArbitrary(.2,2);
+    var randRotate = getRandomInt(0,360);
+   // console.log("tick",randScale); 
+    counter++;
+    if(counter > 30) {
+      clearInterval(refreshIntervalId);
+    }
+    
+    var cloud = new Image();
+  cloud.src = 'https://res.cloudinary.com/moondram832001/image/upload/v1467121783/cloud10_wolgag.png';
+  cloud.onload = function(img){
+  //console.log("loaded");
+    var foo = document.getElementById("clouds");
+    foo.appendChild(cloud);
+     cloud.style.display = "block";
+     cloud.style.transform = "scaleX("+ randScale + ") scaleY("+ randScale +") rotateZ("+ randRotate+ "deg)"
+     cloud.style.opacity = .5;
+     cloud.style.position = "absolute";
+     cloud.style.top = "80%";
+     cloud.style.left = randPos + "px";
+ };
+    
+    
+  
+  }, 20); 
+
+  function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+  }
+  
+  function getRandom() {
+  return Math.random();
+  }
+  
+  function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+  }
+
 </script>
 <body>
   
  
- <app></app>
-  
-<script type="text/javascript" src="/app.409236827d7a12b2de81.js"></script></body>
+<app></app>
+
+<div id="clouds_pos" >
+	<div id="clouds" style=""></div>  
+</div>
+
+<script type="text/javascript" src="/app.8bbacd5479550f4be487.js"></script></body>
 </html>
