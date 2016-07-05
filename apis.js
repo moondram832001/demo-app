@@ -25,7 +25,8 @@ module.exports = function(app) {
                         "Diabetes",
                         "Asthma",
                         "Cystic Fibrosis",
-                        "Alzheimer's Disease"
+                        "Alzheimer's Disease",
+                        "None"
                  ]);
    });
 
