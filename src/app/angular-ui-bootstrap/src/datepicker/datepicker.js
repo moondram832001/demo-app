@@ -278,16 +278,14 @@ angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.dateparser', 'ui.bootst
      $scope.lastClicked = index;
   };
   
-  $scope.hoverIn = function(index){
- //   console.log("hover in ",index);
- //   console.log(angular.element( document.querySelector( '#row_'+ index  ) ));
-    angular.element( document.querySelector( '#row_'+ index  ) ).css({ opacity: 1});
-  //  console.log(e.target.attr("data-id"));
+      $scope.hoverIn = function(index){
+
+      angular.element( document.querySelector( '#row_'+ index  ) ).css({ opacity: 1});
+ 
   }
   
   $scope.hoverOut = function(index){
-  //  console.log("hover out ",index);
-    angular.element( document.querySelector( '#row_'+ index  ) ).css({ opacity: .1});
+     angular.element( document.querySelector( '#row_'+ index  ) ).css({ opacity: .1});
   }
 
   $scope.move = function(direction) {
@@ -297,13 +295,13 @@ angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.dateparser', 'ui.bootst
     self.refreshView();
     
     $http.get('/api/dates/booked/'+ month  + "/" + year).then(function(response){
-     //   console.log("moving");  
+ 
         var dateList = response.data;
         $scope.dateDisabled = function disabled(data) {
           var date = data.date,
             mode = data.mode;
            return mode === 'day' && dateList[date.getDate()];    
-          //return mode === 'day' && (date.getDay() === 0 || date.getDay() === 2);
+ 
          };
         self.refreshView();     
     })

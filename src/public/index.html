@@ -22,8 +22,8 @@ body {
 
 </style>
 <script>
- var counter = 1;
-  var refreshIntervalId =  setInterval(function(){
+	var counter = 1;
+	var refreshIntervalId =  setInterval(function(){
     
     var randPos = getRandomInt(-400,2000);
     var randScale = getRandomArbitrary(.2,2);
@@ -34,21 +34,20 @@ body {
       clearInterval(refreshIntervalId);
     }
     
-    var cloud = new Image();
-  cloud.src = 'https://res.cloudinary.com/moondram832001/image/upload/v1467121783/cloud10_wolgag.png';
-  cloud.onload = function(img){
- 
-    var foo = document.getElementById("clouds");
-    foo.appendChild(cloud);
-     cloud.style.display = "block";
-     cloud.style.transform = "scaleX("+ randScale + ") scaleY("+ randScale +") rotateZ("+ randRotate+ "deg)"
-     cloud.style.opacity = .5;
-     cloud.style.position = "absolute";
-     cloud.style.top = "80%";
-     cloud.style.left = randPos + "px";
- };
- 
-  
+	var cloud = new Image();
+	cloud.src = 'https://res.cloudinary.com/moondram832001/image/upload/v1467121783/cloud10_wolgag.png';
+	cloud.onload = function(img){
+
+	var clouds = document.getElementById("clouds");
+	clouds.appendChild(cloud);
+	 cloud.style.display = "block";
+	 cloud.style.transform = "scaleX("+ randScale + ") scaleY("+ randScale +") rotateZ("+ randRotate+ "deg)"
+	 cloud.style.opacity = .5;
+	 cloud.style.position = "absolute";
+	 cloud.style.top = "80%";
+	 cloud.style.left = randPos + "px";
+	};
+   
   }, 20); 
 
   function getRandomInt(min, max) {
