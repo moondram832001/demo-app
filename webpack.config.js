@@ -199,7 +199,13 @@ module.exports = function makeWebpackConfig () {
    */
   config.devServer = {
     contentBase: './src/public',
-    stats: 'minimal'
+    stats: 'minimal',
+    proxy: {
+    "/api/*": {
+    target: "http://localhost:5000"
+    }
+}
+
   };
 
   return config;

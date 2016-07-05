@@ -1,5 +1,6 @@
 
-<div >
-    <uib-datepicker ng-model="app.dt" class="" datepicker-options="app.options" ></uib-datepicker>
-    <button type="button" ui-sref="getInfo" class="btn button-next" ><span >Next</span></button>
+<div>
+    <uib-datepicker ng-change="app.getFormattedDate(app.dt)" ng-model="app.dt" class="" datepicker-options="app.options" ></uib-datepicker>
+    <div ng-show="app.formattedDate" class="selected-date">Selected Date : {{app.formattedDate}}</div>
+    <button  type="button" ui-sref="getInfo" class="btn button-next" ><span >Next</span></button>
 </div>

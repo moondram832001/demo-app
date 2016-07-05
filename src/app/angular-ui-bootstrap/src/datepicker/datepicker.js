@@ -23,8 +23,8 @@ angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.dateparser', 'ui.bootst
   yearRows: 4
 })
 
-.controller('UibDatepickerController', ['$scope', '$attrs', '$parse', '$interpolate', '$locale', '$log', 'dateFilter', 'uibDatepickerConfig', '$datepickerLiteralWarning', '$datepickerSuppressError', 'uibDateParser',
-  function($scope, $attrs, $parse, $interpolate, $locale, $log, dateFilter, datepickerConfig, $datepickerLiteralWarning, $datepickerSuppressError, dateParser) {
+.controller('UibDatepickerController', ['$scope', '$attrs', '$parse', '$interpolate', '$locale', '$log', 'dateFilter', 'uibDatepickerConfig', '$datepickerLiteralWarning', '$datepickerSuppressError', 'uibDateParser','$http',
+  function($scope, $attrs, $parse, $interpolate, $locale, $log, dateFilter, datepickerConfig, $datepickerLiteralWarning, $datepickerSuppressError, dateParser,$http) {
   var self = this,
       ngModelCtrl = { $setViewValue: angular.noop }, // nullModelCtrl;
       ngModelOptions = {},
@@ -295,6 +295,18 @@ angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.dateparser', 'ui.bootst
         month = self.activeDate.getMonth() + direction * (self.step.months || 0);
     self.activeDate.setFullYear(year, month, 1);
     self.refreshView();
+    
+    $http.get('/api/dates/booked/'+ month  + "/" + year).then(function(response){
+     //   console.log("moving");  
+        var dateList = response.data;
+        $scope.dateDisabled = function disabled(data) {
+          var date = data.date,
+            mode = data.mode;
+           return mode === 'day' && dateList[date.getDate()];    
+          //return mode === 'day' && (date.getDay() === 0 || date.getDay() === 2);
+         };
+        self.refreshView();     
+    })
   };
 
   $scope.toggleMode = function(direction) {
