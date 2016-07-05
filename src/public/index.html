@@ -41,6 +41,9 @@ body {
 	var clouds = document.getElementById("clouds");
 	clouds.appendChild(cloud);
 	 cloud.style.display = "block";
+	 cloud.style.msTransform = "scaleX("+ randScale + ") scaleY("+ randScale +") rotateZ("+ randRotate+ "deg)"
+	 cloud.style.MozTransform = "scaleX("+ randScale + ") scaleY("+ randScale +") rotateZ("+ randRotate+ "deg)"
+	 cloud.style.WebkitTransform = "scaleX("+ randScale + ") scaleY("+ randScale +") rotateZ("+ randRotate+ "deg)"
 	 cloud.style.transform = "scaleX("+ randScale + ") scaleY("+ randScale +") rotateZ("+ randRotate+ "deg)"
 	 cloud.style.opacity = .5;
 	 cloud.style.position = "absolute";
