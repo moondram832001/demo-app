@@ -45,7 +45,7 @@ class AppCtrl {
     })
 
     this.getFormattedDate = function(date){
-      console.log("calling");
+     
       App.formattedDate = Utils.formatDate(date);
     }
 
@@ -95,7 +95,7 @@ angular.module(MODULE_NAME, [uirouter,datepicker])
   .controller('AppCtrl', AppCtrl)
   .service('Utils', function(){
       this.formatDate = function (date) {
-            console.log("called",date);
+           
             var monthNames = [
               "January", "February", "March",
               "April", "May", "June", "July",
@@ -110,6 +110,6 @@ angular.module(MODULE_NAME, [uirouter,datepicker])
 
             return [day, monthNames[monthIndex], year].join('-');
       }
-   });;
+   });
 
 export default MODULE_NAME;

@@ -118,3 +118,18 @@ footer {
 .uib-datepicker{
   height: 425px;
 }
+
+.selection-box{
+  margin-bottom: 20px;
+}
+
+.form-header{
+  color:#ccc;
+  opacity:.7;
+}
+
+.homepage-header{
+  color:#ccc;
+  opacity:.7; 
+}
+

@@ -19,12 +19,15 @@ module.exports = function(app) {
 
    app.get('/api/chronicDiseaseList', function(req, res) {
                
-        res.json({
-  	        name: 10,
-  	        result: "deadly disease"
-        });
-        
-    });
+        res.json([
+                        "Arthritis",
+                        "Cancer",
+                        "Diabetes",
+                        "Asthma",
+                        "Cystic Fibrosis",
+                        "Alzheimer's Disease"
+                 ]);
+   });
 
 
 }
